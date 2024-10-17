@@ -1,15 +1,40 @@
-/* src/index.css */
-
+:root {
+  --background-color: #f5f5dc;
+  --text-color: #333333;
+  --primary-color: #d2b48c;
+  --secondary-color: #c0c0c0;
+  --border-color: #d2b48c;
+}
 
 body {
   padding: 16px;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
 }
 
 #root {
   width: 100%;
   height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+nav {
+  margin-bottom: 16px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-right: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color);
 }
 
 ul {
@@ -23,27 +48,70 @@ li {
 }
 
 .mail-box {
-  border: 2px solid white;
+  border: 2px solid var(--border-color);
   padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.mail-box:hover {
+  transform: scale(1.03); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 form {
   display: flex;
   flex-direction: column;
-}
-
-label,
-button {
-  margin: 16px 0px;
-  font-weight: bold;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 input,
 select,
 textarea {
   padding: 8px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e0d9c0;
+  color: var(--text-color);
 }
 
 button {
-  background-color: #535bf2;
+  padding: 12px 20px;
+  background-color: #c19a6b;
+  color: #ffffff; 
+  border: 2px solid #a67c52;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #b89b72;
+  transform: scale(1.01);
+}
+
+h1, h2, h3 {
+  color: var(--text-color);
+}
+
+strong {
+  color: var(--primary-color);
+}
+
+.mail-box a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+
+.mail-box a:hover {
+  color: #a39480;
 }

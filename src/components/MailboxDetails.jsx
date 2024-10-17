@@ -1,9 +1,12 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-const MailboxDetails = ({ mailboxes }) => {
+const MailboxDetails = ({ mailboxes, letters }) => {
   const { mailboxId } = useParams();
   const selectedBox = mailboxes.find(
     (mailbox) => mailbox._id === Number(mailboxId)
+  );
+  const selectedLetters = letters.filter(
+    (letter) => letter.mailboxId === Number(mailboxId)
   );
 
   if (!selectedBox) {
@@ -12,10 +15,19 @@ const MailboxDetails = ({ mailboxes }) => {
 
   return (
     <div>
-      <h2>Mailbox Details</h2>
+      <h1>Mailbox Details</h1>
       <p>Box Number: {selectedBox._id}</p>
       <p>Boxholder: {selectedBox.boxholder}</p>
       <p>Box Size: {selectedBox.boxSize}</p>
+      <h3>Letters:</h3>
+      <ul>
+        {selectedLetters.map((letter, index) => (
+          <li key={index}>
+            <strong>To:</strong> {letter.recipient} <br />
+            <strong>Message:</strong> {letter.message}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
