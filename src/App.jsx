@@ -1,10 +1,11 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import './App.css';
 import NavBar from './components/NavBar';
 import MailboxForm from './components/MailboxForm';
 import MailboxList from './components/MailboxList';
 import MailboxDetails from './components/MailboxDetails';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 const App = () => {
   const [mailboxes, setMailboxes] = useState([]);
